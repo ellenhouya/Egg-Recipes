@@ -1,0 +1,213 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="layer2">
+  <div class="img-title-con">
+    <div class="landing-page-title">
+      <div class="title-container">
+        <h2 class="first-line-title">As Sure as</h2>
+        <h2>Eggs is Eggs</h2>
+      </div>
+      <p class="intro-text">
+        Welcome to our Egg Recipes website, your go-to destination for delicious
+        and versatile egg-based dishes! Whether you're a culinary enthusiast, a
+        busy parent looking for quick meal solutions, or simply someone who
+        loves the incredible versatility of eggs, you've come to the right
+        place.
+      </p>
+    </div>
+
+    <div class="main-image-container">
+      <img
+        class="main-image"
+        src="https://i.im.ge/2024/03/08/8vH7TJ.pancake.png"
+        alt="pancake"
+      />
+
+      <div class="vapour">
+        <span style="--i: 1"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 5"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="popular-con"></div>
+
+  <div class="container recipes-container">
+    <div class="row gx-1">
+      <!-- <div class="col-md-4">
+        <div class="card">
+          <div class="card-img-title">
+            <img
+              src="https://www.themealdb.com/images/media/meals/0206h11699013358.jpg"
+              class="card-img-top"
+              alt="Blini Pancakes"
+            />
+            <div class="card-name-rating">
+              <h5 class="recipe-name">Blini Pancakes</h5>
+              <span class="rating-stars">★★★★★</span>
+              <div class="card-body">
+                <p class="card-text">
+                  <a
+                    href="/display_filter_results?checkedVals=Low"
+                    class="cal-text highlighted"
+                    >Low</a
+                  >
+                  Calorie
+                </p>
+
+                <p class="card-area">
+                  <a
+                    href="/display_filter_results?checkedVals=Russian"
+                    class="cuisine-text highlighted"
+                    >Russian</a
+                  >
+                  Cuisine
+                </p>
+                <p class="card-category">
+                  <a
+                    href="/display_filter_results?checkedVals=Side"
+                    class="Side-text highlighted"
+                    >Side</a
+                  >
+                  |
+                  <a
+                    href="/display_filter_results?checkedVals=Dessert"
+                    class="Dessert-text highlighted"
+                    >Dessert</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="message-con">
+            <a class="recipe-name explore-btn" id="popular-01" href="/view/01"
+              >Explore</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-img-title">
+            <img
+              src="https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg"
+              class="card-img-top"
+              alt="Apple Crumble"
+            />
+            <div class="card-name-rating">
+              <h5 class="recipe-name">Apple Crumble</h5>
+              <span class="rating-stars">★★★★</span>
+              <div class="card-body">
+                <p class="card-text">
+                  <a
+                    href="/display_filter_results?checkedVals=Moderate"
+                    class="cal-text highlighted"
+                    >Moderate</a
+                  >
+                  Calorie
+                </p>
+
+                <p class="card-area">
+                  <a
+                    href="/display_filter_results?checkedVals=British"
+                    class="cuisine-text highlighted"
+                    >British</a
+                  >
+                  Cuisine
+                </p>
+                <p class="card-category">
+                  <a
+                    href="/display_filter_results?checkedVals=Side"
+                    class="Side-text highlighted"
+                    >Side</a
+                  >
+                  |
+                  <a
+                    href="/display_filter_results?checkedVals=Dessert"
+                    class="Dessert-text highlighted"
+                    >Dessert</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="message-con">
+            <a class="recipe-name explore-btn" id="popular-03" href="/view/03"
+              >Explore</a
+            >
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="col-md-4">
+        <div class="card">
+          <div class="card-img-title">
+            <img
+              src="https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg"
+              class="card-img-top"
+              alt="Bread Omelette"
+            />
+            <div class="card-name-rating">
+              <h5 class="recipe-name">Bread Omelette</h5>
+              <span class="rating-stars">★★★★</span>
+              <div class="card-body">
+                <p class="card-text">
+                  <a
+                    href="/display_filter_results?checkedVals=High"
+                    class="cal-text highlighted"
+                    >High</a
+                  >
+                  Calorie
+                </p>
+
+                <p class="card-area">
+                  <a
+                    href="/display_filter_results?checkedVals=Irish"
+                    class="cuisine-text highlighted"
+                    >Irish</a
+                  >
+                  Cuisine
+                </p>
+                <p class="card-category">
+                  <a
+                    href="/display_filter_results?checkedVals=Breakfast"
+                    class="Breakfast-text highlighted"
+                    >Breakfast</a
+                  >
+                  |
+                  <a
+                    href="/display_filter_results?checkedVals=Lunch"
+                    class="Lunch-text highlighted"
+                    >Lunch</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="message-con">
+            <a class="recipe-name explore-btn" id="popular-05" href="/view/05"
+              >Explore</a
+            >
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+<script>
+  let meals = {{meals|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+{% endblock %}
+<!-- </div>
+</div> -->

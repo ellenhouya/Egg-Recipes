@@ -1,0 +1,94 @@
+.ingredients-measures,
+.nutrition-facts {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#ingredients,
+#measures,
+#nutrition,
+#amount {
+  margin-right: 50px;
+}
+
+#ingredients-label,
+#measures-label,
+#nutrition-label,
+#amount-label {
+  margin-right: 10px;
+}
+
+.add-ingredient,
+.add-nutrition,
+.remove-ingredient,
+.remove-nutrition {
+  padding: 0 10px;
+  background: var(--accent);
+  border-radius: 3px;
+  width: 30px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.1s;
+  margin-left: 10px;
+}
+
+.add-ingredient:active {
+  transform: scale(0.97);
+  outline: none;
+  border: none;
+}
+
+.add-data-submit-btn,
+#edit-data-submit-btn {
+  margin-bottom: 50px;
+}
+
+.add-data-submit-btn,
+#edit-data-submit-btn,
+.add-data-submit-btn:hover {
+  background-color: var(--accent) !important;
+}
+
+#edit-data-discard-btn {
+  position: relative;
+  bottom: 88px;
+  left: 105px;
+  background: linear-gradient(rgb(247, 246, 246), rgb(203, 203, 203));
+  color: #000;
+}
+
+.button-con {
+  display: flex;
+}
+
+.content-before,
+.nav-con-before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#seeItemBtn {
+  margin-right: 20px;
+  background-color: var(--accent);
+}
+
+#addNewItemBtn {
+  background: linear-gradient(rgb(247, 246, 246), rgb(203, 203, 203));
+  color: #000;
+}
+
+.main-con:before {
+  z-index: -2;
+}

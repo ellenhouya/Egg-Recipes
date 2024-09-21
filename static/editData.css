@@ -1,0 +1,9 @@
+#see-result-btn {
+  margin-right: 20px;
+  background-color: var(--accent);
+}
+
+#complete-q-btn {
+  background: linear-gradient(rgb(247, 246, 246), rgb(203, 203, 203));
+  color: #000;
+}

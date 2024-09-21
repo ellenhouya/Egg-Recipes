@@ -1,0 +1,210 @@
+{% extends "layout.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='addData.css') }}"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='editData.css') }}"
+/>
+
+{% endblock %} {% block content %}
+
+<!-- <div id="confirmMessage" class="container">
+  <p>Are you sure you want to discard the changes?</p>
+  <div class="yes-no-btn-con">
+    <button id="see-result-btn" class="btn btn-primary">Yes</button>
+    <button id="complete-q-btn" class="btn btn-primary">No</button>
+  </div>
+</div> -->
+
+<div class="container addData-con">
+  <div class="addData-con-layer">
+    <h1>Edit Data</h1>
+
+    <form action="/edit" method="post">
+      <div class="form-group">
+        <label for="mealName">Meal Name:</label>
+        <input
+          type="text"
+          id="mealName"
+          name="mealName"
+          class="form-control"
+          required
+        />
+      </div>
+      <!-- Include labels for category, area, instructions, mealThumb, and youtube fields -->
+
+      <!-- Category -->
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input
+          type="text"
+          id="category"
+          name="category"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Area -->
+      <div class="form-group">
+        <label for="area">Area:</label>
+        <input
+          type="text"
+          id="area"
+          name="area"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Instructions -->
+      <div class="form-group">
+        <label for="instructions">Instructions:</label>
+        <textarea
+          type="text"
+          id="instructions"
+          name="instructions"
+          class="form-control"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Meal Thumbnail URL -->
+      <div class="form-group">
+        <label for="mealThumb">Meal Thumbnail URL:</label>
+        <input
+          type="url"
+          id="mealThumb"
+          name="mealThumb"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- YouTube Embed URL -->
+      <div class="form-group">
+        <label for="youtube">YouTube Embed URL:</label>
+        <input
+          type="url"
+          id="youtube"
+          name="youtube"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Ingredients: Objects-->
+      <div class="form-group ing-measures-con">
+        <div class="ingredients-measures">
+          <label for="ingredients" id="ingredients-label">Ingredients:</label>
+          <input
+            type="text"
+            id="ingredients"
+            name="ingredients"
+            class="form-control"
+            required
+          />
+          <label for="measures" id="measures-label">measures:</label>
+          <input
+            type="text"
+            id="measures"
+            name="measures"
+            class="form-control"
+            required
+          />
+          <div class="button-con">
+            <div class="add-ingredient">+</div>
+            <div class="remove-ingredient">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rating -->
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input
+          type="number"
+          id="rating"
+          name="rating"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Nutrition Facts: Objects-->
+      <!-- <div class="form-group">
+      <label for="nutritionFacts">Nutrition Facts:</label>
+      <input
+        id="nutritionFacts"
+        name="nutritionFacts"
+        class="form-control"
+        required
+      />
+    </div> -->
+      <div class="form-group nutrition-facts-con">
+        <div class="nutrition-facts">
+          <label for="nutrition" id="nutrition-label">nutrition:</label>
+          <input
+            type="text"
+            id="nutrition"
+            name="nutrition"
+            class="form-control"
+            required
+          />
+          <label for="amount" id="amount-label">amount:</label>
+          <input
+            type="text"
+            id="amount"
+            name="amount"
+            class="form-control"
+            required
+          />
+          <div class="button-con">
+            <div class="add-nutrition">+</div>
+            <div class="remove-nutrition">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calorie Level -->
+      <div class="form-group">
+        <label for="calLevel">Calorie Level:</label>
+        <input
+          type="text"
+          id="calLevel"
+          name="calLevel"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="edit-data-submit-btn">
+        Submit
+      </button>
+    </form>
+    <button type="submit" class="btn btn-primary" id="edit-data-discard-btn">
+      Discard Changes
+    </button>
+  </div>
+</div>
+
+<!-- Success message and buttons -->
+
+<!--  -->
+
+<script>
+  let selectedMeal = {{meal|tojson}}
+  let meals = {{meals|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+<script src="{{ url_for('static', filename='addData.js') }}"></script>
+<script src="{{ url_for('static', filename='editData.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+.search-results-title-con h3 {
+  position: relative;
+}
+
+.search-input-result {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* 
+.recipe-con img {
+  margin-right: 0;
+}
+
+.recipe-name {
+  padding: 0 10px;
+} */

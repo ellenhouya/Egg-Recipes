@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+
+    {% block head %}
+
+    <title>Egg Recipes</title>
+
+    {% endblock %}
+  </head>
+  <body>
+    
+  <div id="confirmMessage" class="container">
+    <p>Are you sure you want to discard the changes?</p>
+    <div class="yes-no-btn-con">
+      <button id="yesBtn" class="btn btn-primary">Yes</button>
+      <button id="noBtn" class="btn btn-primary">No</button>
+    </div>
+  </div>
+
+  <div id="successMessage" class="container">
+    <p>New item successfully created.</p>
+    <div class="see-add-btn-con">
+      <a href="#" id="seeItemBtn" class="btn btn-success">See it Here</a>
+      <button id="addNewItemBtn" class="btn btn-primary">Add New Item</button>
+    </div>
+  </div>
+
+    <nav class="nav-con navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand nav-title" href="/">Egg Recipes</a>
+
+        <div class="crud-con">
+          <div class="search-con">
+            <div class="search-input">
+              <input
+                type="text"
+                class="form-control search-input-text ui-autocomplete-input"
+                placeholder="Search"
+                autocomplete="off"
+              />
+              <div class="submit-con">
+                <button class="submit-button">Go</button>
+              </div>
+            </div>
+          </div>
+
+      
+          <div class="add-data-con">
+            <button class="add-data-button">Add Data</button>
+          </div>
+        </div>
+      </div>
+
+  
+      <nav class="left-navbar">
+        <div id="filter-btn" class="layout-con">Filter By</div>
+
+        <div class="layout-calorie-level-con layout-con">
+          <div class="layout-calorie-level layout-item">Calorie level</div>
+          <div class="layout-plus-btn cal-plus-btn">+</div>
+        </div>
+
+        <div class="layout-type-con layout-con">
+          <div class="layout-type layout-item">Type</div>
+          <div class="layout-plus-btn type-plus-btn">+</div>
+        </div>
+
+        <div class="layout-area-con layout-con">
+          <div class="layout-area layout-item">Area</div>
+          <div class="layout-plus-btn area-plus-btn">+</div>
+        </div>
+      </nav>
+    </nav>
+
+  
+    <div class="filter-box-con">
+      <div class="cal-level-option-con">
+        <div class="cal-level-option">
+          <input
+            value="Low"
+            class="low-checkbox cal-level-checkbox"
+            type="checkbox"
+          />Low
+        </div>
+
+        <div class="cal-level-option">
+          <input
+            value="Moderate"
+            class="moderate-checkbox cal-level-checkbox"
+            type="checkbox"
+          />Moderate
+        </div>
+
+        <div class="cal-level-option">
+          <input
+            value="Medium"
+            class="medium-checkbox cal-level-checkbox"
+            type="checkbox"
+          />Medium
+        </div>
+
+        <div class="cal-level-option">
+          <input
+            value="High"
+            class="high-checkbox cal-level-checkbox"
+            type="checkbox"
+          />High
+        </div>
+
+        <div class="cal-level-option">
+          <input
+            value="Very High"
+            class="very-high-checkbox cal-level-checkbox"
+            type="checkbox"
+          />Very High
+        </div>
+      </div>
+
+      <div class="type-option-con">
+        <div class="type-option">
+          <input
+            value="Side"
+            class="side-checkbox type-option-checkbox"
+            type="checkbox"
+          />Side
+        </div>
+        <div class="type-option">
+          <input
+            value="Dessert"
+            class="dessert-checkbox type-option-checkbox"
+            type="checkbox"
+          />Dessert
+        </div>
+        <div class="type-option">
+          <input
+            value="Breakfast"
+            class="breakfast-checkbox type-option-checkbox"
+            type="checkbox"
+          />Breakfast
+        </div>
+        <div class="type-option">
+          <input
+            value="Lunch"
+            class="lunch-checkbox type-option-checkbox"
+            type="checkbox"
+          />Lunch
+        </div>
+        <div class="type-option">
+          <input
+            value="Starter"
+            class="starter-checkbox type-option-checkbox"
+            type="checkbox"
+          />Starter
+        </div>
+        <div class="type-option">
+          <input
+            value="Vegetarian"
+            class="vegetarian-checkbox type-option-checkbox"
+            type="checkbox"
+          />Vegetarian
+        </div>
+      </div>
+
+      <div class="area-option-con">
+        <div class="area-option">
+          <input
+            value="Russian"
+            class="russian area-option-checkbox"
+            type="checkbox"
+          />Russian
+        </div>
+        <div class="area-option">
+          <input
+            value="British"
+            class="british area-option-checkbox"
+            type="checkbox"
+          />British
+        </div>
+        <div class="area-option">
+          <input
+            value="Irish"
+            class="irish area-option-checkbox"
+            type="checkbox"
+          />Irish
+        </div>
+        <div class="area-option">
+          <input
+            value="Taiwanese"
+            class="taiwanese area-option-checkbox"
+            type="checkbox"
+          />Taiwanese
+        </div>
+        <div class="area-option">
+          <input
+            value="French"
+            class="french area-option-checkbox"
+            type="checkbox"
+          />French
+        </div>
+        <div class="area-option">
+          <input
+            value="Chinese"
+            class="chinese area-option-checkbox"
+            type="checkbox"
+          />Chinese
+        </div>
+        <div class="area-option">
+          <input
+            value="Filipino"
+            class="filipino area-option-checkbox"
+            type="checkbox"
+          />Filipino
+        </div>
+      </div>
+    </div>
+
+      <div class="container-fluid content">
+        <div class="layer"></div>
+
+        <div class="main-con">       
+            {% block content %} {% endblock %}
+          </div>
+      </div>
+    </div>
+
+    <footer>
+        <div class="footer-con">
+           <div class="footer-layer">
+          <div class="info-con">
+            <a href="/"> Homepage</a>
+            <a href="#">Follow</a>
+            <a href="#">Contact</a>
+            <p class="copyright">
+              Copyright &copy 2024 Egg Recipies Inc. <br>All Rights Reserved.<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

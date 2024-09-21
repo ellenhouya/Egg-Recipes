@@ -1,0 +1,95 @@
+{% extends "layout.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='popular.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<div class="mealInfo">
+  <!--  -->
+  <div class="what-search-con">
+    <!--  -->
+    <p class="mealInfoP">
+      {{meal.mealName}}
+      <span class="edit-data-btn">Edit Data</span>
+    </p>
+    <div class="rating">
+      Rating: {% for _ in range(meal.rating) %} &#9733; {% endfor %}
+    </div>
+    <div class="area-type-con">
+      <div class="area">
+        Area:
+        <a
+          href="/display_filter_results?checkedVals={{meal.area}}"
+          class="cal-text highlighted"
+          >{{ meal.area }}</a
+        >
+      </div>
+      {% for category in meal.category %}
+      <span class="category">
+        <a
+          href="/display_filter_results?checkedVals={{category}}"
+          class="cal-text highlighted"
+          >{{ category }}</a
+        >
+      </span>
+      {% if not loop.last %}|{% endif %}{% endfor %}
+      <div class="cal-level">
+        <a
+          href="/display_filter_results?checkedVals={{meal.calLevel}}"
+          class="cal-text highlighted"
+          >{{ meal.calLevel }}</a
+        >
+        Calorie
+      </div>
+    </div>
+    <div class="imgAndSpanCon">
+      <img
+        src="{{meal.mealThumb}}"
+        class="mealInfoImg"
+        alt="{{meal.mealName}}"
+      />
+      <iframe
+        width="500"
+        height="315"
+        src="{{meal.youtube}}"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <p class="method">{{meal.instructions}}</p>
+
+  <div class="cateAndAreaCon">
+    <div class="ing-and-nutrition">
+      <div class="ingTxt">
+        <p>Ingredients</p>
+        {% for ingredient, measure in meal.ingredientsMeasuers.items() %}
+        <div>{{ ingredient }}: {{ measure }}</div>
+        {% endfor %}
+      </div>
+      <div class="nutritionTxt">
+        <div class="nutrition-container">
+          <p>Nutrition Facts</p>
+          {% for nutrition, amount in meal.nutritionFacts.items() %}
+          <div>{{ nutrition }}: {{ amount }}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script src="{{ url_for('static', filename='popular.js') }}"></script> -->
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+<script>
+  let selectedMeal = {{meal|tojson}}
+  let meals = {{meals|tojson}}
+</script>
+
+{% endblock %}
